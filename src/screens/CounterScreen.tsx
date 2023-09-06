@@ -14,10 +14,19 @@ const CounterScreen =  () => {
               onPress={()=>setCounter(counter + 1)}            
             /> */}
             <TouchableOpacity
+              style={style.fabLocationR}
               onPress={ () => setCounter(counter + 1 )}
             >
-              <View>
-                <Text>+1</Text>
+              <View style={style.fab}>
+                <Text style={style.fabText}>+1</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={style.fabLocationL}
+              onPress={ () => setCounter(counter - 1 )}
+            >
+              <View style={style.fab}>
+                <Text style={style.fabText}>-1</Text>
               </View>
             </TouchableOpacity>
         </View>
@@ -35,5 +44,28 @@ const style = StyleSheet.create({
     fontSize:55,
     textAlign:"center",
     top:-15
+  },
+  fabLocationR: {
+    position: 'absolute', //toma el ancho del padre (en este caos toda la pantalla)
+    bottom: 50, // segun el ancho del padre lo toma y lo coloca en el button
+    right: 50
+  },
+  fabLocationL :{
+    position: 'absolute', //toma el ancho del padre (en este caos toda la pantalla)
+    bottom: 50, // segun el ancho del padre lo toma y lo coloca en el button
+    left: 50
+  },
+  fab: {
+    backgroundColor: '#5856D6',
+    width:60,
+    height:60,
+    borderRadius:100,
+    justifyContent:'center'
+  },
+  fabText: {
+    color: 'white',
+    fontSize: 25,
+    fontWeight: 'bold',
+    alignSelf:'center'
   }
 })
