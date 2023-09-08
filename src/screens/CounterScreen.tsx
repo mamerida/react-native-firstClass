@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import {StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {StyleSheet, Text, View } from "react-native";
+import { Fab } from "../components/Fab";
 
 
 const CounterScreen =  () => {
@@ -9,26 +10,27 @@ const CounterScreen =  () => {
             <Text style={style.title}>
               Contador {counter}
             </Text>
+            <Fab
+              title="+1"
+              onPress={()=>setCounter(counter + 1)}  
+            />
+            <Fab
+              title="-1"
+              position="bl"
+              onPress={()=>setCounter(counter - 1)}  
+            />
             {/* <Button
               title="click"
               onPress={()=>setCounter(counter + 1)}            
             /> */}
-            <TouchableOpacity
-              style={style.fabLocationR}
-              onPress={ () => setCounter(counter + 1 )}
-            >
-              <View style={style.fab}>
-                <Text style={style.fabText}>+1</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
+            {/* <TouchableOpacity
               style={style.fabLocationL}
               onPress={ () => setCounter(counter - 1 )}
             >
               <View style={style.fab}>
                 <Text style={style.fabText}>-1</Text>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </View>
       )
 }
@@ -44,28 +46,5 @@ const style = StyleSheet.create({
     fontSize:55,
     textAlign:"center",
     top:-15
-  },
-  fabLocationR: {
-    position: 'absolute', //toma el ancho del padre (en este caos toda la pantalla)
-    bottom: 50, // segun el ancho del padre lo toma y lo coloca en el button
-    right: 50
-  },
-  fabLocationL :{
-    position: 'absolute', //toma el ancho del padre (en este caos toda la pantalla)
-    bottom: 50, // segun el ancho del padre lo toma y lo coloca en el button
-    left: 50
-  },
-  fab: {
-    backgroundColor: '#5856D6',
-    width:60,
-    height:60,
-    borderRadius:100,
-    justifyContent:'center'
-  },
-  fabText: {
-    color: 'white',
-    fontSize: 25,
-    fontWeight: 'bold',
-    alignSelf:'center'
   }
 })
