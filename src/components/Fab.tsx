@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableNativeFeedback, TouchableOpacity, View } from 'react-native'
 
 //creo una interface para poder recibir props 
 
@@ -11,17 +11,22 @@ interface Props {
 
 export const Fab = ({title, onPress, position = "br"} : Props) => {
   return (
-    <TouchableOpacity
+    <View
         style={[
             style.fabLocation,
             (position === 'bl' ? style.left : style.rigth)
         ]}
-        onPress={onPress}
+    >
+    <TouchableNativeFeedback 
+        onPress={onPress} // este componente no respeta estilos se debe crear un
+                          // view para poder guardar los estilos
+        background={TouchableNativeFeedback.Ripple('#28425B',false,30)}
     >
         <View style={style.fab}>
         <Text style={style.fabText}>{title}</Text>
         </View>
-    </TouchableOpacity>
+    </TouchableNativeFeedback>
+    </View>
   )
 }
 
