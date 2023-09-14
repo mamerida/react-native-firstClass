@@ -4,6 +4,7 @@ import CounterScreen from "./src/screens/CounterScreen";
 import { BoxObjectModelScreen } from "./src/screens/BoxObjectModelScreen";
 import { SafeAreaView } from "react-native";
 import { DimensionesScreen } from "./src/screens/DimensionesScreen";
+import { PositionRelative } from "./src/screens/PositionRelative";
 
 const App = () =>{
     return(
@@ -11,7 +12,8 @@ const App = () =>{
         {/* <HellowWorldScreen/> */}
         {/* <CounterScreen/> */}
         {/* <BoxObjectModelScreen/> */}
-        <DimensionesScreen/>
+        {/* <DimensionesScreen/> */}
+        <PositionRelative/>
       </SafeAreaView>
     )
 }
