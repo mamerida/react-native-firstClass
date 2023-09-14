@@ -29,3 +29,10 @@ const styles = StyleSheet.create({
         backgroundColor:'#F0A23B'
     }
 })
+
+// position relative vs absotule. 
+/*
+la posicion absoluta siempre lo es con respecto al padre 
+la posicion relativa es contada sobre el workflow completo de la pantalla
+sin tener en cuenta a los padres
+*/
